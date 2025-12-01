@@ -10,6 +10,9 @@ class Producto extends Model
 {
     use HasFactory;
 
+    // La clave primaria en la tabla es `id_producto`
+    protected $primaryKey = 'id_producto';
+
     protected $fillable = [
         'codigo',
         'nombre',

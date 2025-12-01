@@ -20,7 +20,8 @@ class User extends Authenticatable
     protected $fillable = [
         'nombre',
         'email',
-        'password'
+        'password',
+        'id_sucursal'
     ];
 
     protected $hidden = [
@@ -37,7 +38,7 @@ class User extends Authenticatable
 
     public function sucursal(): BelongsTo
     {
-        return $this->belongsTo(Sucursal::class);
+        return $this->belongsTo(Sucursal::class, 'id_sucursal');
     }
 
     public function movimientos(): HasMany

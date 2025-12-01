@@ -14,7 +14,7 @@ class StoreMovimientoRequest extends FormRequest
     public function rules(): array
     {
         return [
-            'inventario_id' => 'required|exists:inventarios,id',
+            'inventario_id' => 'required|exists:inventarios,id_inventario',
             'tipo' => 'required|in:entrada,salida',
             'cantidad' => 'required|integer|min:1',
             'observaciones' => 'nullable|string|max:500',

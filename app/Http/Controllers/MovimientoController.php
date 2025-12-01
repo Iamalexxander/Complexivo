@@ -71,10 +71,10 @@ class MovimientoController extends Controller
                 throw new \Exception('Stock insuficiente. Disponible: ' . $inventario->stock_actual);
             }
 
-            // Crear el movimiento
+            // Crear el movimiento (usar nombres de columnas reales)
             Movimiento::create([
-                'inventario_id' => $request->inventario_id,
-                'usuario_id' => Auth::id(),
+                'id_inventario' => $request->inventario_id,
+                'id_usuario' => Auth::id(),
                 'tipo' => $request->tipo,
                 'cantidad' => $request->cantidad,
                 'observaciones' => $request->observaciones,
